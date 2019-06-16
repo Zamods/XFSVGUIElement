@@ -11,7 +11,8 @@ Here i will discuss about files in project and there relation with **SVG** for b
 
 **UISvgs** is a folder in the main project **XFSVGUIElement** that stores text files **.txt**. Svgs are stored as paths in text file like **M 6.7132,103.12901 13.642468,91.075013 20.6169,103.10293 Z** which will draw a triangle. You can use any vector graphic software like **"InkScape"** to acquire svg path which can be found by opening **.svg** with notepad or software alike.
 
-![Like this Svg was opened in notepad++](https://1drv.ms/u/s!Alepmc_xf33mgyPsrpM-qEd1aZi-?e=P7Pix0)
+Like this Svg was opened in notepad++
+<img src="https://6lbhkq.by.files.1drv.com/y4mcVlnsH72f1OjhU5N2Em8PuPwK3YgEz_MCOWsh0JLzKU2jGyptLSUdXAD2564WCLXOKkGUTEoBIUu41jsyeqgTVAsYGfWNZJkbHM55pPFMOgCqe4ruSzGVe671mnHB_b_lcpnkhDrXSpNTx__Hlc-zf2Z3t4pBWP5YnBsazCZERRDKPUY_j64tz1I6CT0kSKwMWRkQDC2qHecE6GKqLbaKA?width=535&height=134&cropmode=none" width="535" height="134" />
 ## SVGUIElement.cs
 
 This is code file which draws svg on canvas with certain parameters. **SVGUIElement** has inheritance of **ContentView** which means that all properties, methods and events from **ContentView** is functional on **SVGUIElement**. 
@@ -32,4 +33,6 @@ It's very easy to **SVGUIElement** in any Xamarin Forms project. You just need t
     <local:SVGUIElement ResourceId="XFSVGUIElement.UISvgs.Triangle.txt" Grid.Row="4"
                             Color="#874bd7" SVGPaintStyle="Fill" />
 Here, you can see that **ResourceId**  contains the name of project ***"XFSVGUIElement"*** then folder in which svg paths are stored ***"UISvgs"*** and then name of the file itself ***"Triangle.txt"*** . 
-So, here's the format `ResourceId="MyProject.MySvgs.CircleSvg.txt"`.
+So, Here's the format `ResourceId="MyProject.MySvgs.CircleSvg.txt"`.
+
+> **Note:** Always set **Build Action** for Svg file as **Embedded Resource** .
