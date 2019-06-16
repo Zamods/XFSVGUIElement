@@ -36,3 +36,13 @@ Here, you can see that **ResourceId**  contains the name of project ***"XFSVGUIE
 So, Here's the format `ResourceId="MyProject.MySvgs.CircleSvg.txt"`.
 
 > **Note:** Always set **Build Action** for Svg file as **Embedded Resource** .
+
+## SVGPaintStyle
+
+**SVGPaintStyle** handles the painting style for svg. It allows user to explicitly decide how they want to color thier svg. There are three options offered by **SVGPaintStyle** as follows:
+ - Fill - Paints svg with given color. **"Default Option"**
+ - Stroke - Paints svg only with stroke color. 
+ -   FillAndStroke - Paints svg with both color and stroke color.
+  > **Note:** For **"Stroke"** option **"StrokeWidth"** property is necessary. Otherwise, Svg will be invisible.
+
+### I will write more later...
