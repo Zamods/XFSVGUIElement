@@ -31,8 +31,7 @@ It's very easy to **SVGUIElement** in any Xamarin Forms project. You just need t
 
 ### ResourceId Format
 
-    <local:SVGUIElement ResourceId="XFSVGUIElement.UISvgs.Triangle.txt" Grid.Row="4"
-                            Color="#874bd7" SVGPaintStyle="Fill" />
+    <local:SVGUIElement ResourceId="XFSVGUIElement.UISvgs.Triangle.txt" Grid.Row="4" Color="#874bd7" SVGPaintStyle="Fill" />
 Here, you can see that **ResourceId**  contains the name of project ***"XFSVGUIElement"*** then folder in which svg paths are stored ***"UISvgs"*** and then name of the file itself ***"Triangle.txt"*** . 
 So, Here's the format `ResourceId="MyProject.MySvgs.CircleSvg.txt"`.
 
