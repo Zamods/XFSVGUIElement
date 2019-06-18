@@ -272,7 +272,7 @@ namespace XFSVGUIElement
                 case ScaleOptions.RatioScale:
                     {
                         float ratio = Math.Min(xRatio, yRatio);
-                        svgCanvas.Scale(ratio + this.PointScale - this.StrokeWidth);
+                        svgCanvas.Scale(ratio + this.PointScale);
                     }
                     break;
 
@@ -287,7 +287,7 @@ namespace XFSVGUIElement
                 default:
                     {
                         float ratio = Math.Min(xRatio, yRatio);
-                        svgCanvas.Scale(ratio + this.PointScale - this.StrokeWidth);
+                        svgCanvas.Scale(ratio + this.PointScale);
                     }
                     break;
             }
