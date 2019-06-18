@@ -145,6 +145,83 @@ namespace XFSVGUIElement
 
         #endregion
 
+        #region Has Drop Shadow
+
+        public static readonly BindableProperty HasDropShadowProperty = BindableProperty.Create(
+           nameof(HasDropShadow), typeof(bool), typeof(SVGUIElement), false, propertyChanged: RedrawCanvas);
+
+        public bool HasDropShadow
+        {
+            get => (bool)GetValue(HasDropShadowProperty);
+            set => SetValue(HasDropShadowProperty, value);
+        }
+
+        #endregion
+
+        #region Drop Shadow X length
+
+        public static readonly BindableProperty DropShadowXLengthProperty = BindableProperty.Create(
+           nameof(DropShadowXLength), typeof(float), typeof(SVGUIElement), 0.10f, propertyChanged: RedrawCanvas);
+
+        public float DropShadowXLength
+        {
+            get => (float)GetValue(DropShadowXLengthProperty);
+            set => SetValue(DropShadowXLengthProperty, value);
+        }
+
+        #endregion
+
+        #region Drop Shadow Y length
+
+        public static readonly BindableProperty DropShadowYLengthProperty = BindableProperty.Create(
+           nameof(DropShadowYLength), typeof(float), typeof(SVGUIElement), 0.10f, propertyChanged: RedrawCanvas);
+
+        public float DropShadowYLength
+        {
+            get => (float)GetValue(DropShadowYLengthProperty);
+            set => SetValue(DropShadowYLengthProperty, value);
+        }
+
+        #endregion
+
+        #region Drop Shadow X Sigma
+
+        public static readonly BindableProperty DropShadowXSigmaProperty = BindableProperty.Create(
+           nameof(DropShadowXSigma), typeof(float), typeof(SVGUIElement), 0.10f, propertyChanged: RedrawCanvas);
+
+        public float DropShadowXSigma
+        {
+            get => (float)GetValue(DropShadowXSigmaProperty);
+            set => SetValue(DropShadowXSigmaProperty, value);
+        }
+
+        #endregion
+
+        #region Drop Shadow Y Sigma
+
+        public static readonly BindableProperty DropShadowYSigmaProperty = BindableProperty.Create(
+           nameof(DropShadowYSigma), typeof(float), typeof(SVGUIElement), 0.10f, propertyChanged: RedrawCanvas);
+
+        public float DropShadowYSigma
+        {
+            get => (float)GetValue(DropShadowYSigmaProperty);
+            set => SetValue(DropShadowYSigmaProperty, value);
+        }
+
+        #endregion
+
+        #region Drop Shadow Color 
+
+        public static readonly BindableProperty DropShadowColorProperty = BindableProperty.Create(
+           nameof(DropShadowColor), typeof(Color), typeof(SVGUIElement), Color.Black, propertyChanged: RedrawCanvas);
+
+        public Color DropShadowColor
+        {
+            get => (Color)GetValue(DropShadowColorProperty);
+            set => SetValue(DropShadowColorProperty, value);
+        }
+
+        #endregion
 
         #endregion
 
@@ -208,12 +285,17 @@ namespace XFSVGUIElement
         {
             SKPaint fillColor = new SKPaint
             {
-                ColorFilter = SKColorFilter.CreateBlendMode(
-                            this.Color.ToSKColor(),
-                            SKBlendMode.SrcIn),
-                IsAntialias = true
+                Color = this.StrokeColor.ToSKColor(),
+                IsAntialias = true,
+                ImageFilter = (this.HasDropShadow) ? SKImageFilter.CreateDropShadow(
+                                 this.DropShadowXLength / 10,
+                                 this.DropShadowYLength / 10,
+                                 this.DropShadowXSigma / 10,
+                                 this.DropShadowYSigma / 10,
+                                 this.DropShadowColor.ToSKColor(),
+                                 SKDropShadowImageFilterShadowMode.DrawShadowAndForeground) : null
             };
-
+            
             switch (svgPaintStyle)
             {
                case PaintStyle.Fill:
@@ -227,9 +309,7 @@ namespace XFSVGUIElement
                             IsStroke = true,
                             StrokeWidth = this.StrokeWidth,
                             Style = SKPaintStyle.Stroke,
-                            ColorFilter = SKColorFilter.CreateBlendMode(
-                            this.StrokeColor.ToSKColor(),
-                            SKBlendMode.SrcIn),
+                            Color = this.StrokeColor.ToSKColor(),
                             IsAntialias = true
                         };
                         svgCanvas.DrawPath(svg, strokeColor);
@@ -243,9 +323,7 @@ namespace XFSVGUIElement
                             IsStroke = true,
                             StrokeWidth = this.StrokeWidth,
                             Style = SKPaintStyle.Stroke,
-                            ColorFilter = SKColorFilter.CreateBlendMode(
-                            this.StrokeColor.ToSKColor(),
-                            SKBlendMode.SrcIn),
+                            Color = this.StrokeColor.ToSKColor(),
                             IsAntialias = true
                         };
                         svgCanvas.DrawPath(svg, strokeColor);

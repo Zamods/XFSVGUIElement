@@ -22,8 +22,8 @@
         <local:SVGUIElement ResourceId="XFSVGUIElement.UISvgs.BSTest.txt" Grid.Row="0"
                             Color="#874bd7" SVGPaintStyle="Fill" CustomHeight="1.1" CustomWidth="1.05" Scale="1.1" Margin="16,0,0,0"/>
 
-        <local:SVGUIElement ResourceId="XFSVGUIElement.UISvgs.Car.txt" Grid.Row="1"
-                            Color="#874bd7" SVGPaintStyle="FillandStroke" StrokeWidth=".2" PointScale="-15"  />
+        <local:SVGUIElement ResourceId="XFSVGUIElement.UISvgs.Car.txt" Grid.Row="1" HasDropShadow="True" DropShadowXLength="3" DropShadowYLength="3" DropShadowXSigma="2.5" DropShadowYSigma="2.5"
+                            Color="#874bd7" SVGPaintStyle="FillandStroke" SVGScaleOptions="AspectRatioScale" CustomHeight="1.1" CustomWidth="1.01" Scale="3.5" />
 
         <local:SVGUIElement ResourceId="XFSVGUIElement.UISvgs.NBTest.txt" Grid.Row="2"
                             SVGPaintStyle="Stroke" StrokeColor="#e3e3e3" StrokeWidth=".2" />
