@@ -194,14 +194,6 @@ namespace XFSVGUIElement
         public SVGUIElement()
         {
             Padding = new Thickness(0);
-
-            // Allows to scale canvas width according to device screen width with considering horizental padding and border size.
-            _screenWidth = _screenWidth - this.StrokeWidth;
-            _canvasView.WidthRequest = _screenWidth;
-
-            /* Use this to adjust height of canvas or use grid layout.
-             * _canvasView.HeightRequest = _screenWidth / 5.453f;
-            */
             Content = _canvasView;
             _canvasView.PaintSurface += CanvasViewOnPaintSurface;
         }
@@ -272,8 +264,8 @@ namespace XFSVGUIElement
 
         private void ScaleSVGToOption(ScaleOptions scaleOption, SKRect svgBounds, SKImageInfo imageInfo, SKCanvas svgCanvas)
         {
-            float xRatio = imageInfo.Width / svgBounds.Width;
-            float yRatio = imageInfo.Height / svgBounds.Height;
+            float xRatio = imageInfo.Width / (svgBounds.Width + this.StrokeWidth);
+            float yRatio = imageInfo.Height / (svgBounds.Height + this.StrokeWidth);
 
             switch (scaleOption)
             {
