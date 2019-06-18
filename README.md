@@ -98,7 +98,9 @@ Use **StrokeColor** property to paint stroke on Svg path. You also need to set *
 Use **StrokeWidth** property to size stroke on Svg path. You need to use positive values to make it work. For example if you use value less then **0.00f** then it will automatically use **.500f** as a  **StrokeWidth** .
 ## Want more information?
 http://www.pshul.com/2018/01/25/xamarin-forms-using-svg-images-with-skiasharp/
+
 https://www.pshul.com/2018/02/01/xamarin-forms-interactive-svg-image-using-skiasharp-with-pan-and-zoom/
+
 https://docs.microsoft.com/en-us/xamarin/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data
 ## Recommendation
 I would advise you to use Grid layout to control Svg size according to your need because other layouts seem to have issues with canvas that if Svg is scaled to certain point it will clip. Don't forget to explicitly set row height or you will face same clipping issues.
