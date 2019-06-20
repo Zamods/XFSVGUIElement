@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFSVGUIElement"
+             x:Class="XFSVGUIElement.FewExamplesDemo"
+             Title="Few Examples"
+             NavigationPage.HasBackButton="True">
+
+
+    <Grid Padding="10,0,10,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <local:SVGUIElement ResourceId="XFSVGUIElement.UISvgs.BSTest.txt" Grid.Row="0"
+                            Color="#874bd7" SVGPaintStyle="Fill" CustomHeight="1.1" CustomWidth="1.05" Scale="1.1" Margin="16,0,0,0"/>
+
+        <local:SVGUIElement ResourceId="XFSVGUIElement.UISvgs.Car.txt" Grid.Row="1" HasDropShadow="True" DropShadowXLength="3" DropShadowYLength="3" DropShadowXSigma="2.5" DropShadowYSigma="2.5"
+                            Color="#874bd7" SVGPaintStyle="FillandStroke" SVGScaleOptions="AspectRatioScale" CustomHeight="1.1" CustomWidth="1.01" Scale="3.5" />
+
+        <local:SVGUIElement ResourceId="XFSVGUIElement.UISvgs.NBTest.txt" Grid.Row="2"
+                            SVGPaintStyle="Stroke" StrokeColor="#e3e3e3" StrokeWidth=".2" />
+
+        <local:SVGUIElement ResourceId="XFSVGUIElement.UISvgs.Circle.txt" Grid.Row="3"
+                            Color="#874bd7" SVGPaintStyle="Fill" />
+
+        <local:SVGUIElement ResourceId="XFSVGUIElement.UISvgs.Triangle.txt" Grid.Row="4"
+                            Color="#874bd7" SVGPaintStyle="Fill" />
+
+        <local:SVGUIElement ResourceId="XFSVGUIElement.UISvgs.RoundedTriangle.txt" Grid.Row="5"
+                            Color="#874bd7" SVGPaintStyle="Fill" />
+
+        <local:SVGUIElement ResourceId="XFSVGUIElement.UISvgs.WeirdShape.txt" Grid.Row="6"
+                            Color="#874bd7" SVGPaintStyle="Fill" />
+
+    </Grid>
+</ContentPage>
