@@ -1,7 +1,7 @@
 
 # Xamarin Forms SVG UI Element
 
-This project uses SkiaSharp libraries for Xamarin Forms to create SVG images on content pages. I have created reusable control so anybody can use it without any further changes.
+This project uses SkiaSharp libraries for Xamarin Forms to create SVG images on content pages. I have created reusable control so anybody can use it without any further changes. Please check Wiki for detailed documentation for this control.
 ***
 <img src="https://u7ts5g.by.files.1drv.com/y4mcW-5IjMSv4KyYeM0sA89O8HMK-6cOCXq8rPE03GZ_M3ypZmuHvxuUThH7At0SdD9EH5pOCaWkAbEmzNI6a3Zxcvlb0q1zD_sX1KxDeCLXqVUu9AejbqQDlT69RP_3Z2CjnkLl3_G2C5tAUxaErixT_2boziJPrQFG73dS1FVsM2_TAx5QKEvMcGhPcTDTkS9YU0Vjw86Tb5TltsyjUWZng?width=433&height=660&cropmode=none" width="433" height="660" />
 
