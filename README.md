@@ -8,7 +8,9 @@ This project uses SkiaSharp libraries for Xamarin Forms to create SVG images on 
 # How to use **"SVGUIElement"**
 
 It's very easy to **"SVGUIElement"** in any Xamarin Forms project. You just need to copy **"SVGUIElement.cs"** into your project and install following required ***nuget packages***.
+
 **SkiaSharp**
+
 **SkiaSharp.Views.Forms**
 
 ## Want more information?
