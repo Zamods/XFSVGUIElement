@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFSVGUIElement"
+             x:Class="XFSVGUIElement.DropShadowDemo"
+             Title="DropShadow Demo"             
+             NavigationPage.HasBackButton="True">
+    
+    <ContentPage.Content>
+        <Grid Padding="10,0,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <local:SVGUIElement x:Name="SVGElement" ResourceId="XFSVGUIElement.UISvgs.Car.txt" Grid.Row="0" HasDropShadow="True" 
+                            DropShadowXLength="{Binding Source={x:Reference DSXLength},Path=Value}" 
+                            DropShadowYLength="{Binding Source={x:Reference DSYLength},Path=Value}" 
+                            DropShadowXSigma="{Binding Source={x:Reference DSSXLength},Path=Value}" 
+                            DropShadowYSigma="{Binding Source={x:Reference DSSYLength},Path=Value}" 
+                            Color="#874bd7" SVGPaintStyle="Fill" SVGScaleOptions="AspectRatioScale" CustomHeight="1.1" CustomWidth="1.01" Scale="3.5" />
+
+            <StackLayout Grid.Row="1">
+                <Label Text="DropShadowXLength" FontSize="Medium"/>
+                <Slider x:Name="DSXLength" MaximumTrackColor="IndianRed" MinimumTrackColor="DeepSkyBlue" Minimum="-50" Maximum="50"/>
+                <Entry Placeholder="Type Value" Text="{Binding Source={x:Reference DSXLength},Path=Value, Mode=TwoWay}" Keyboard="Numeric"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2">
+                <Label Text="DropShadowYLength" FontSize="Medium"/>
+                <Slider x:Name="DSYLength" MaximumTrackColor="IndianRed" MinimumTrackColor="DeepSkyBlue" Minimum="-50" Maximum="50"/>
+                <Entry Placeholder="Type Value" Text="{Binding Source={x:Reference DSYLength},Path=Value, Mode=TwoWay}" Keyboard="Numeric"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3">
+                <Label Text="DropShadowXSigma" FontSize="Medium"/>
+                <Slider x:Name="DSSXLength" MaximumTrackColor="IndianRed" MinimumTrackColor="DeepSkyBlue" Minimum="-50" Maximum="50"/>
+                <Entry Placeholder="Type Value" Text="{Binding Source={x:Reference DSSXLength},Path=Value, Mode=TwoWay}" Keyboard="Numeric"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="4">
+                <Label Text="DropShadowYSigma" FontSize="Medium"/>
+                <Slider x:Name="DSSYLength" MaximumTrackColor="IndianRed" MinimumTrackColor="DeepSkyBlue" Minimum="-50" Maximum="50"/>
+                <Entry Placeholder="Type Value" Text="{Binding Source={x:Reference DSSYLength},Path=Value, Mode=TwoWay}" Keyboard="Numeric"/>
+            </StackLayout>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

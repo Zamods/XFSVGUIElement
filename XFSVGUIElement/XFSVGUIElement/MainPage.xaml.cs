@@ -1,5 +1,4 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace XFSVGUIElement
 {
@@ -8,7 +7,8 @@ namespace XFSVGUIElement
         public MainPage()
         {
             InitializeComponent();
-            
+            this.BindingContext = new MainPageViewModel(Navigation);
         }
+
     }
 }

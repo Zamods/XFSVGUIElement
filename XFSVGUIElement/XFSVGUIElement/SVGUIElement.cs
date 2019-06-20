@@ -285,15 +285,16 @@ namespace XFSVGUIElement
         {
             SKPaint fillColor = new SKPaint
             {
-                Color = this.StrokeColor.ToSKColor(),
-                IsAntialias = true,
+                Color = this.Color.ToSKColor(),
                 ImageFilter = (this.HasDropShadow) ? SKImageFilter.CreateDropShadow(
                                  this.DropShadowXLength / 10,
                                  this.DropShadowYLength / 10,
                                  this.DropShadowXSigma / 10,
                                  this.DropShadowYSigma / 10,
                                  this.DropShadowColor.ToSKColor(),
-                                 SKDropShadowImageFilterShadowMode.DrawShadowAndForeground) : null
+                                 SKDropShadowImageFilterShadowMode.DrawShadowAndForeground) : null,
+                FilterQuality = SKFilterQuality.High,
+                IsAntialias = true,
             };
             
             switch (svgPaintStyle)

@@ -10,6 +10,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="StringToSVGStyleConverter.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="UISvgs\BSTest.txt" />
     <None Remove="UISvgs\Car.txt" />
     <None Remove="UISvgs\Circle.txt" />
@@ -49,6 +53,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="DropShadowDemo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="FewExamplesDemo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ScalingSvgDemo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="UISvgs\Triangle.txt">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </EmbeddedResource>

@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:XFSVGUIElement"
+             x:Class="XFSVGUIElement.ScalingSvgDemo"
+             Title="AspectRatioScale Demo"
+             NavigationPage.HasBackButton="True">
+    
+    <ContentPage.Content>
+        <Grid Padding="10,0,10,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <local:SVGUIElement x:Name="SVGElement" ResourceId="XFSVGUIElement.UISvgs.Car.txt" Grid.Row="0" Color="#874bd7" SVGPaintStyle="Fill" 
+                            SVGScaleOptions="AspectRatioScale"
+                            CustomHeight="{Binding Source={x:Reference CH},Path=Value, Mode=TwoWay}" 
+                            CustomWidth="{Binding Source={x:Reference CW},Path=Value, Mode=TwoWay}" 
+                            Scale="{Binding Source={x:Reference CVS},Path=Value, Mode=TwoWay}" />
+
+            <StackLayout Grid.Row="1">
+                <Label Text="CustomHeight" FontSize="Medium"/>
+                <Slider x:Name="CH" MaximumTrackColor="IndianRed" MinimumTrackColor="DeepSkyBlue" Minimum="-50" Maximum="50" Value="1"/>
+                <Entry Placeholder="Type Value" Text="{Binding Source={x:Reference CH},Path=Value, Mode=TwoWay}" Keyboard="Numeric"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="2">
+                <Label Text="CustomWidth" FontSize="Medium"/>
+                <Slider x:Name="CW" MaximumTrackColor="IndianRed" MinimumTrackColor="DeepSkyBlue" Minimum="-50" Maximum="50" Value="1"/>
+                <Entry Placeholder="Type Value" Text="{Binding Source={x:Reference CW},Path=Value, Mode=TwoWay}" Keyboard="Numeric"/>
+            </StackLayout>
+
+            <StackLayout Grid.Row="3">
+                <Label Text="ContentView Inherited Scale" FontSize="Medium"/>
+                <Slider x:Name="CVS" MaximumTrackColor="IndianRed" MinimumTrackColor="DeepSkyBlue" Minimum="-10" Maximum="10" Value="1"/>
+                <Entry Placeholder="Type Value" Text="{Binding Source={x:Reference CVS},Path=Value, Mode=TwoWay}" Keyboard="Numeric"/>
+            </StackLayout>
+
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
